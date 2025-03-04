@@ -1,0 +1,16 @@
+{   
+    "resource_url": "",
+    "resources":[
+        {
+            "name": "《这就是中国》大全",
+            "relative_path": "all_vvs",
+            "tags": ["vv", "张维为"]
+        },
+        {
+            "name": "精选v图",
+            "relative_path": "精选表情",
+            "tags": ["vv", "张维为"]
+        }
+    ]
+
+}
