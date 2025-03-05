@@ -26,7 +26,8 @@ class ResourcePackService:
                            image_paths: List[str],
                            cover_image: Optional[str] = None,
                            tags: Optional[List[str]] = None,
-                           regex: Optional[Dict] = None) -> str:
+                           regex: Optional[Dict] = None,
+                             url: str=None) -> str:
         
         if not name or not version or not author:
             raise ResourcePackError("资源包名称、版本号和作者不能为空")
@@ -99,6 +100,8 @@ class ResourcePackService:
             "description": description,
             "created_at": datetime.now().strftime("%Y-%m-%d"),
             "tags": tags or [],
+            "url": url,
+            "update_url": os.path.join(url, pack_dir, "manifest.json").replace('\\', '/')
             # "cover": cover_info,
 
         }
@@ -135,4 +138,5 @@ for resource in metadata['resources']:
                                                author=resource.get('author', metadata.get('author', "none")),
                                                description=resource.get("description", "none"),
                                                regex = resource.get("regex", None),
-                                               image_paths = img_ps)
+                                               image_paths = img_ps,
+                                               url = metadata.get('resource_url'))
