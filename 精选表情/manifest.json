@@ -5,8 +5,8 @@
     "description": "none",
     "created_at": "2025-03-05",
     "tags": [],
-    "url": "https://github.com/MemeMeow-Studio/VVfromVideo/raw/main/",
-    "update_url": "https://github.com/MemeMeow-Studio/VVfromVideo/raw/main/精选表情/manifest.json",
+    "url": "https://raw.githubusercontent.com/MemeMeow-Studio/VVfromVideo/main/",
+    "update_url": "https://raw.githubusercontent.com/MemeMeow-Studio/VVfromVideo/main/精选表情/manifest.json",
     "contents": {
         "images": {
             "description": "图像资源目录",
