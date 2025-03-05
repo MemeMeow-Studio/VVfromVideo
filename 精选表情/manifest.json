@@ -2,18 +2,16 @@
     "name": "精选v图",
     "version": "1.0.1",
     "author": "Official",
-    "description": "blank",
-    "created_at": "2025-03-04",
+    "description": "none",
+    "created_at": "2025-03-05",
     "tags": [],
     "contents": {
         "images": {
-            "path": "精选表情",
             "description": "图像资源目录",
             "files": {
                 "1740372336^谢谢.jpg": {
-                    "original_name": "1740372336^谢谢.jpg",
                     "hash": "23b81b3db363aabc8bc77750eb182e3ef3103d9133df85d612b7b9d963228f7e",
-                    "relative_path": "\\1740372336^谢谢.jpg"
+                    "filepath": "\\1740372336^谢谢.jpg"
                 }
             }
         }

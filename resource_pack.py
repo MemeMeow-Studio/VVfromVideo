@@ -25,7 +25,8 @@ class ResourcePackService:
                            description: str,
                            image_paths: List[str],
                            cover_image: Optional[str] = None,
-                           tags: Optional[List[str]] = None) -> str:
+                           tags: Optional[List[str]] = None,
+                           regex: Optional[Dict] = None) -> str:
         
         if not name or not version or not author:
             raise ResourcePackError("资源包名称、版本号和作者不能为空")
@@ -86,12 +87,11 @@ class ResourcePackService:
             new_name = original_name
 
             file_mapping[new_name] = {
-                "original_name": original_name,
                 "hash": file_hash,
-                "relative_path": img_path.split(pack_dir)[-1]
+                "filepath": img_path.split(pack_dir)[-1]
             }
 
-                
+
         manifest = {
             "name": name,
             "version": version,
@@ -100,16 +100,17 @@ class ResourcePackService:
             "created_at": datetime.now().strftime("%Y-%m-%d"),
             "tags": tags or [],
             # "cover": cover_info,
-            "contents": {
+
+        }
+        if regex:
+            manifest['regex']=regex
+        manifest['contents'] = {
                 "images": {
-                    "path": pack_dir,
                     "description": "图像资源目录",
                     "files": file_mapping,
-                    
+
                 }
             }
-        }
-        
         manifest_path = os.path.join(pack_dir, "manifest.json")
         try:
             with open(manifest_path, "w", encoding="utf-8") as f:
@@ -133,4 +134,5 @@ for resource in metadata['resources']:
                                                version=metadata['version'],
                                                author=resource.get('author', metadata.get('author', "none")),
                                                description=resource.get("description", "none"),
+                                               regex = resource.get("regex", None),
                                                image_paths = img_ps)

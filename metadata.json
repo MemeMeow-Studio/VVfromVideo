@@ -6,7 +6,11 @@
         {
             "name": "《这就是中国》大全",
             "relative_path": "all_vvs",
-            "tags": ["vv", "张维为"]
+            "tags": ["vv", "张维为"],
+            "regex": {
+                "pattern": "^\\d+\\^",
+                "replacement": ""
+            }
         },
         {
             "name": "精选v图",
