@@ -89,7 +89,7 @@ class ResourcePackService:
 
             file_mapping[new_name] = {
                 "hash": file_hash,
-                "filepath": img_path.split(pack_dir)[-1]
+                "filepath": os.path.relpath(img_path, pack_dir)
             }
 
 
