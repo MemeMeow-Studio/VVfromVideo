@@ -100,7 +100,7 @@ class ResourcePackService:
             "description": description,
             "created_at": datetime.now().strftime("%Y-%m-%d"),
             "tags": tags or [],
-            "url": url,
+            "url": os.path.join(url, pack_dir).replace('\\', '/'),
             "update_url": os.path.join(url, pack_dir, "manifest.json").replace('\\', '/')
             # "cover": cover_info,
 
